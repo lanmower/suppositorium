@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Licence Application Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .form-section {
+            background-color: #ffffff;
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .form-section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #4299e1;
+            padding-bottom: 0.5rem;
+        }
+        .subsection-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.5rem; /* Rounded corners */
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+            outline: none;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
+            margin-right: 0.5rem;
+            margin-bottom: 0; /* Override default margin-bottom */
+            width: auto; /* Allow auto width for radio/checkbox */
+        }
+        .btn-primary {
+            background-color: #4299e1;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #3182ce;
+            transform: translateY(-2px);
+        }
+        .header {
+            background-color: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media (max-width: 768px) {
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .signature-area {
+            border: 1px dashed #cbd5e0;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #f7fafc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>WASTE LICENCE APPLICATION FORM</h1>
+        <p>In terms of the National Environmental Management: Waste Act, 2008 (No. 59 of 2008)</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="form-section text-center mb-8">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">For Official Use Only</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <div>
+                    <label for="fileReferenceNumber">File Reference Number:</label>
+                    <input type="text" id="fileReferenceNumber" name="fileReferenceNumber" class="bg-gray-100" readonly>
+                </div>
+                <div>
+                    <label for="dateReceived">Date Received:</label>
+                    <input type="text" id="dateReceived" name="dateReceived" class="bg-gray-100" readonly>
+                </div>
+                <div>
+                    <label for="classification">Classification:</label>
+                    <input type="text" id="classification" name="classification" class="bg-gray-100" readonly>
+                </div>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 1: TYPE OF APPLICATION AND FACILITY</h2>
+
+                <div class="subsection-title">Indicate the type of application by marking with a cross and fill in the required sections only</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TYPE OF APPLICATION</th>
+                                <th>MARK</th>
+                                <th>SECTIONS OF THE FORM TO BE FILLED IN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A new licence</td>
+                                <td><input type="radio" name="applicationType" value="newLicence"></td>
+                                <td>Part 2 and see table of activities below for relevant sections of part 2</td>
+                            </tr>
+                            <tr>
+                                <td>A licence amendment</td>
+                                <td><input type="radio" name="applicationType" value="licenceAmendment"></td>
+                                <td>Part 3 and Part 2 only if there are changes to the information or the applicant holds a permit issued in terms of section 20 of ECA (No. 78 of 1989) as amended.</td>
+                            </tr>
+                            <tr>
+                                <td>A licence for closure</td>
+                                <td><input type="radio" name="applicationType" value="licenceClosure"></td>
+                                <td>Part 4, Section 2, 3a, 3b, & 3c. of part 2 of this application form</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">Indicate the type of facility/operation and fill in the required sections only</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TYPE OF ACTIVITY</th>
+                                <th>MARK</th>
+                                <th>SECTIONS OF THE FORM TO BE FILLED IN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Recycling and/or recovery Facility</td>
+                                <td><input type="radio" name="activityType" value="recyclingRecovery"></td>
+                                <td>All except Section 8</td>
+                            </tr>
+                            <tr>
+                                <td>Storage and or transfer Facility</td>
+                                <td><input type="radio" name="activityType" value="storageTransfer"></td>
+                                <td>All except Section 8</td>
+                            </tr>
+                            <tr>
+                                <td>Treatment facility</td>
+                                <td><input type="radio" name="activityType" value="treatmentFacility"></td>
+                                <td>All except Section 8</td>
+                            </tr>
+                            <tr>
+                                <td>Disposal facility</td>
+                                <td><input type="radio" name="activityType" value="disposalFacility"></td>
+                                <td>All</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">Activities applied for</div>
+                <p class="mb-4 text-gray-600">An application may be made for more than one listed or specified activity that, together, make up one development proposal. All the listed activities that make up this application must be listed.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="noticeNumber">INDICATE THE NO. & DATE OF THE RELEVANT NOTICE:</label>
+                        <input type="text" id="noticeNumber" name="noticeNumber">
+                    </div>
+                    <div>
+                        <label for="activityNumbers">ACTIVITY NUMBERS (AS LISTED IN THE WASTE MANAGEMENT ACTIVITY LIST):</label>
+                        <textarea id="activityNumbers" name="activityNumbers" rows="3"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <label for="describeActivity">DESCRIBE EACH LISTED ACTIVITY:</label>
+                    <textarea id="describeActivity" name="describeActivity" rows="5"></textarea>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">NB: Authorisation issued will only cover activities applied for and listed above. Activities added in the middle or after the processing of this authorisation may mean a totally new application.</p>
+
+                <div class="subsection-title">Application for Category A (equivalent to Basic Assessment)</div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="basicAssessmentApplication" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="basicAssessmentApplication" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Is this an application for a basic assessment (as defined in the EIA regulations)?</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="basicAssessmentReportAttached" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="basicAssessmentReportAttached" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">If, YES, is a basic assessment report attached?</span>
+                </div>
+                <div class="mb-4">
+                    <label for="basicAssessmentReportSubmissionDate">If, NO, please indicate when the basic assessment report will be submitted:</label>
+                    <input type="text" id="basicAssessmentReportSubmissionDate" name="basicAssessmentReportSubmissionDate" placeholder="e.g., DD/MM/YYYY">
+                </div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="appendixB1Attached" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="appendixB1Attached" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Is information required as per Appendix B1 of this form attached?</span>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">If, NO, please ensure that it is submitted together with the basic assessment report (BAR)</p>
+
+                <div class="subsection-title">Application for Category B (equivalent to Scoping and Environmental Impact Assessment (EIA))</div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="scopingEIAApplication" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="scopingEIAApplication" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Is this an application for Scoping and EIA (as defined in the EIA regulations)?</span>
+                </div>
+                <div class="mb-4">
+                    <label for="scopingReportSubmissionDate">Please indicate when the Scoping Report and Plan of Study for EIA will be submitted:</label>
+                    <input type="text" id="scopingReportSubmissionDate" name="scopingReportSubmissionDate" placeholder="e.g., DD/MM/YYYY">
+                </div>
+                <p class="text-sm text-gray-500 mt-2">Please ensure that both Appendix B1 and B2 are completed and included in reports</p>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="consultationRequested" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="consultationRequested" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">A consultation with the competent authority is hereby requested:</span>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 2: SITE IDENTIFICATION, LOCATION AND LANDUSE</h2>
+
+                <div class="subsection-title">Surveyor-general Cadastral Code 21 digit site reference numbers:</div>
+                <p class="mb-4 text-gray-600">Please indicate all the Surveyor-general Cadastral Code 21 digit site (erf/farm/portion) reference numbers:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label>1. Surveyor’s-General Office:</label>
+                        <input type="text" placeholder="e.g., T, F, C, N">
+                    </div>
+                    <div>
+                        <label>2. Major Code (Registration Division):</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>3. Minor code:</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>4. Property No:</label>
+                        <input type="text" placeholder="Farm No./Erf No./Holding Area No./Scheme No.">
+                    </div>
+                    <div>
+                        <label>5. Portion Number:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="subsection-title">If the property type is not surveyed, complete the following:</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="villageLeader">Full name of leader of village, community or tribal authority:</label>
+                        <input type="text" id="villageLeader" name="villageLeader">
+                    </div>
+                    <div>
+                        <label for="localAuthority">Local Authority:</label>
+                        <input type="text" id="localAuthority" name="localAuthority">
+                    </div>
+                    <div>
+                        <label for="magisterialDistrict">Magisterial District:</label>
+                        <input type="text" id="magisterialDistrict" name="magisterialDistrict">
+                    </div>
+                    <div>
+                        <label for="tribalAuthority">Tribal Authority/Council:</label>
+                        <input type="text" id="tribalAuthority" name="tribalAuthority">
+                    </div>
+                </div>
+
+                <div class="subsection-title">Ownership of the property (mark only one with an X)</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="propertyOwnership" value="applicant100"> Property owned by applicant (100% Share value)</label>
+                    <label><input type="radio" name="propertyOwnership" value="applicantLess100"> Property owned by applicant (Share value less than 100%)</label>
+                    <label><input type="radio" name="propertyOwnership" value="leased"> Property leased by applicant</label>
+                    <label><input type="radio" name="propertyOwnership" value="communal"> The property is communal land</label>
+                </div>
+
+                <div class="subsection-title">Size of Site and Classification</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="facilitySize">Size of facility for a waste management activity:</label>
+                        <input type="text" id="facilitySize" name="facilitySize">
+                    </div>
+                    <div>
+                        <label for="wasteActivityArea">Area where the waste management activity takes place:</label>
+                        <input type="text" id="wasteActivityArea" name="wasteActivityArea">
+                    </div>
+                    <div>
+                        <label for="climaticClassification">Classification of facility in terms of climatic water balance:</label>
+                        <input type="text" id="climaticClassification" name="climaticClassification">
+                    </div>
+                    <div>
+                        <label for="wasteTypeClassification">Classification of Facility in terms of the type and the quantity of waste received:</label>
+                        <input type="text" id="wasteTypeClassification" name="wasteTypeClassification">
+                    </div>
+                </div>
+
+                <div class="subsection-title">Current land-use where the site is situated:</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="industrial" class="mr-2"> Industrial</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="recreation" class="mr-2"> Recreation</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="agriculture" class="mr-2"> Agriculture</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="commercial" class="mr-2"> Commercial</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="residential" class="mr-2"> Residential</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="mining" class="mr-2"> Mining & quarrying</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="forestry" class="mr-2"> Forestry</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="wilderness" class="mr-2"> Wilderness areas</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="wetlands" class="mr-2"> Wetlands</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="natureArea" class="mr-2"> Nature area</label>
+                    <label class="flex items-center"><input type="checkbox" name="landUse" value="openSpaces" class="mr-2"> Open spaces</label>
+                </div>
+                <label for="otherLandUse">Other current land-use:</label>
+                <input type="text" id="otherLandUse" name="otherLandUse">
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>MARK YES/NO</th>
+                                <th>SECTION IN THE REPORTS WHERE RELAVANT AUTHORISATION IS ATTACHED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Is a change of land-use or a consent use application required?</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="landUseChangeRequired" value="yes" class="mr-2"> YES</label>
+                                    <label class="flex items-center"><input type="radio" name="landUseChangeRequired" value="no" class="mr-2"> NO</label>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Must a building plan be submitted to the local authority for approval?</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="buildingPlanRequired" value="yes" class="mr-2"> YES</label>
+                                    <label class="flex items-center"><input type="radio" name="buildingPlanRequired" value="no" class="mr-2"> NO</label>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">Geographical coordinates of all external corner points of the site:</div>
+                <p class="mb-4 text-gray-600">Enter up to 11 corner points.</p>
+                <div id="coordinates-container">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-2 coordinate-row">
+                        <label>Number of corner:</label>
+                        <input type="text" placeholder="e.g., 1">
+                        <label>Latitude:</label>
+                        <input type="text" placeholder="° ' ">
+                        <label>Longitude:</label>
+                        <input type="text" placeholder="° ' ">
+                    </div>
+                </div>
+                <button type="button" class="btn-primary text-sm px-4 py-2 mt-2" onclick="addCoordinateRow()">Add More Coordinates</button>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 3: CONTACT INFORMATION</h2>
+
+                <div class="subsection-title">A) Person to contact about application (EAP)</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="eapName">First name & Surname:</label>
+                        <input type="text" id="eapName" name="eapName">
+                    </div>
+                    <div>
+                        <label for="eapCompany">Company name (if any):</label>
+                        <input type="text" id="eapCompany" name="eapCompany">
+                    </div>
+                    <div>
+                        <label for="eapID">Company Registration/Identity number for individuals:</label>
+                        <input type="text" id="eapID" name="eapID">
+                    </div>
+                    <div>
+                        <label for="eapPhysicalAddress">Physical address:</label>
+                        <input type="text" id="eapPhysicalAddress" name="eapPhysicalAddress">
+                    </div>
+                    <div>
+                        <label for="eapPostalAddress">Postal address:</label>
+                        <input type="text" id="eapPostalAddress" name="eapPostalAddress">
+                    </div>
+                    <div>
+                        <label for="eapPostalCode">Postal code:</label>
+                        <input type="text" id="eapPostalCode" name="eapPostalCode">
+                    </div>
+                    <div>
+                        <label for="eapCell">Cell:</label>
+                        <input type="tel" id="eapCell" name="eapCell">
+                    </div>
+                    <div>
+                        <label for="eapTelephone">Telephone:</label>
+                        <input type="tel" id="eapTelephone" name="eapTelephone">
+                    </div>
+                    <div>
+                        <label for="eapFax">Fax:</label>
+                        <input type="tel" id="eapFax" name="eapFax">
+                    </div>
+                    <div>
+                        <label for="eapEmail">Email Address:</label>
+                        <input type="email" id="eapEmail" name="eapEmail">
+                    </div>
+                </div>
+
+                <div class="subsection-title">B) Person wishing to hold licence</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="applicantName">First name & Surname of Applicant:</label>
+                        <input type="text" id="applicantName" name="applicantName">
+                    </div>
+                    <div>
+                        <label for="applicantCompany">Company name (if any):</label>
+                        <input type="text" id="applicantCompany" name="applicantCompany">
+                    </div>
+                    <div>
+                        <label for="applicantID">Company Registration/Identity number for individuals:</label>
+                        <input type="text" id="applicantID" name="applicantID">
+                    </div>
+                    <div>
+                        <label for="applicantPhysicalAddress">Physical address:</label>
+                        <input type="text" id="applicantPhysicalAddress" name="applicantPhysicalAddress">
+                    </div>
+                    <div>
+                        <label for="applicantPostalAddress">Postal address:</label>
+                        <input type="text" id="applicantPostalAddress" name="applicantPostalAddress">
+                    </div>
+                    <div>
+                        <label for="applicantPostalCode">Postal code:</label>
+                        <input type="text" id="applicantPostalCode" name="applicantPostalCode">
+                    </div>
+                    <div>
+                        <label for="applicantCell">Cell:</label>
+                        <input type="tel" id="applicantCell" name="applicantCell">
+                    </div>
+                    <div>
+                        <label for="applicantTelephone">Telephone:</label>
+                        <input type="tel" id="applicantTelephone" name="applicantTelephone">
+                    </div>
+                    <div>
+                        <label for="applicantFax">Fax:</label>
+                        <input type="tel" id="applicantFax" name="applicantFax">
+                    </div>
+                    <div>
+                        <label for="applicantEmail">E-mail:</label>
+                        <input type="email" id="applicantEmail" name="applicantEmail">
+                    </div>
+                </div>
+
+                <div class="subsection-title">C) Landowner where activity takes place</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="landownerName">First name & Surname:</label>
+                        <input type="text" id="landownerName" name="landownerName">
+                    </div>
+                    <div>
+                        <label for="landownerCompany">Company name (if any):</label>
+                        <input type="text" id="landownerCompany" name="landownerCompany">
+                    </div>
+                    <div>
+                        <label for="landownerID">Company Registration/Identity number for individual(s):</label>
+                        <input type="text" id="landownerID" name="landownerID">
+                    </div>
+                    <div>
+                        <label for="landownerPhysicalAddress">Physical address:</label>
+                        <input type="text" id="landownerPhysicalAddress" name="landownerPhysicalAddress">
+                    </div>
+                    <div>
+                        <label for="landownerPostalAddress">Postal address:</label>
+                        <input type="text" id="landownerPostalAddress" name="landownerPostalAddress">
+                    </div>
+                    <div>
+                        <label for="landownerCell">Cell:</label>
+                        <input type="tel" id="landownerCell" name="landownerCell">
+                    </div>
+                    <div>
+                        <label for="landownerTelephone">Telephone:</label>
+                        <input type="tel" id="landownerTelephone" name="landownerTelephone">
+                    </div>
+                    <div>
+                        <label for="landownerFax">Fax:</label>
+                        <input type="tel" id="landownerFax" name="landownerFax">
+                    </div>
+                    <div>
+                        <label for="landownerEmail">E-mail:</label>
+                        <input type="email" id="landownerEmail" name="landownerEmail">
+                    </div>
+                </div>
+
+                <div class="subsection-title">Operational times</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PERIOD</th>
+                                <th>FROM</th>
+                                <th>UNTIL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Weekdays</td>
+                                <td><input type="time" name="weekdaysFrom"></td>
+                                <td><input type="time" name="weekdaysUntil"></td>
+                            </tr>
+                            <tr>
+                                <td>Saturdays</td>
+                                <td><input type="time" name="saturdaysFrom"></td>
+                                <td><input type="time" name="saturdaysUntil"></td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td><input type="time" name="sundayFrom"></td>
+                                <td><input type="time" name="sundayUntil"></td>
+                            </tr>
+                            <tr>
+                                <td>Public holidays</td>
+                                <td><input type="time" name="publicHolidaysFrom"></td>
+                                <td><input type="time" name="publicHolidaysUntil"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 4: PROCESS/ACTIVITY DESCRIPTION</h2>
+                <div>
+                    <label for="projectTitle">Project Title:</label>
+                    <input type="text" id="projectTitle" name="projectTitle">
+                </div>
+                <div>
+                    <label for="projectDescription">Project Description: Please provide a brief description of the activities and operations at the site. Provide a flow chart of the operation showing all inputs and outputs of the process. Give particulars of the source, location, nature, composition and quantity of emission to the atmosphere, surface water, sewer, and ground-water including noise emissions. Solid waste must be in tons and specify units for liquids and gases.</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="8"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 5: WASTE QUANTITIES</h2>
+                <p class="mb-4 text-gray-600">Indicate or specify types of waste and list the estimated quantities expected to be managed daily (should you need more columns, you are advised to add more)</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label for="hazardousWaste">Hazardous waste (tons/day):</label>
+                        <input type="number" id="hazardousWaste" name="hazardousWaste" step="0.01">
+                    </div>
+                    <div>
+                        <label for="nonHazardousWaste">Non hazardous waste (tons/day):</label>
+                        <input type="number" id="nonHazardousWaste" name="nonHazardousWaste" step="0.01">
+                    </div>
+                    <div>
+                        <label for="totalWasteHandled">Total waste handled (tonnes per day):</label>
+                        <input type="number" id="totalWasteHandled" name="totalWasteHandled" step="0.01">
+                    </div>
+                </div>
+
+                <div class="subsection-title">Source of information supplied in the table above (Mark with an “X”)</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="wasteSourceInfo" value="volumes"> Determined from volumes</label>
+                    <label><input type="radio" name="wasteSourceInfo" value="weighbridge"> Determined with weighbridge/scale</label>
+                    <label><input type="radio" name="wasteSourceInfo" value="estimated"> Estimated</label>
+                </div>
+
+                <div class="subsection-title">Recovery, Reuse, Recycling, treatment and disposal quantities:</div>
+                <p class="mb-4 text-gray-600">Indicate the applicable waste types and quantities expected to be disposed of and salvaged annually:</p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>TYPES OF WASTE</th>
+                                <th>MAIN SOURCE (NAME OF COMPANY)</th>
+                                <th>QUANTITIES TONS/MONTH</th>
+                                <th>QUANTITIES M3/MONTH</th>
+                                <th>ON-SITE RECOVERY REUSE RECYCLING TREATMENT OR DISPOSAL (method & location)</th>
+                                <th>OFFSITE RECOVERY REUSE RECYCLING TREATMENT OR DISPOSAL (method, location and contractor details)</th>
+                                <th>OFFSITE DISPOSAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 6: GENERAL</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="windDirectionNovApr">Prevailing wind direction (e.g. NWW) November – April:</label>
+                        <input type="text" id="windDirectionNovApr" name="windDirectionNovApr">
+                    </div>
+                    <div>
+                        <label for="windDirectionMayOct">Prevailing wind direction (e.g. NWW) May - October:</label>
+                        <input type="text" id="windDirectionMayOct" name="windDirectionMayOct">
+                    </div>
+                </div>
+
+                <div class="subsection-title">The size of population to be served by the facility (Mark with “X”)</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="populationSize" value="0-499" class="mr-2"> 0-499</label>
+                    <label><input type="radio" name="populationSize" value="500-9999" class="mr-2"> 500-9,999</label>
+                    <label><input type="radio" name="populationSize" value="10000-199999" class="mr-2"> 10,000-199,999</label>
+                    <label><input type="radio" name="populationSize" value="200000-upwards" class="mr-2"> 200,000 upwards</label>
+                </div>
+                <div>
+                    <label for="populationComment">Comment:</label>
+                    <textarea id="populationComment" name="populationComment" rows="3"></textarea>
+                </div>
+
+                <div class="subsection-title">The geological formations underlying the site:</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="granite" class="mr-2"> Granite</label>
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="quartzite" class="mr-2"> Quartzite</label>
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="shale" class="mr-2"> Shale</label>
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="dolomite" class="mr-2"> Dolomite</label>
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="sandstone" class="mr-2"> Sandstone</label>
+                    <label class="flex items-center"><input type="checkbox" name="geologicalFormation" value="dolerite" class="mr-2"> Dolerite</label>
+                </div>
+                <label for="otherGeologicalFormation">Other:</label>
+                <input type="text" id="otherGeologicalFormation" name="otherGeologicalFormation">
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 7: COMPETENCE TO OPERATE SITE</h2>
+                <p class="mb-4 text-gray-600">It is imperative that the holder of the waste licence is a fit person in terms of section 59 of the NEMWA (59 of 2008). To assess the holder’s competence to operate the site, please disclose the following:</p>
+
+                <div class="subsection-title">Legal compliance</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>YES/NO</th>
+                                <th>DETAILS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Has the applicant ever been found guilty or issued with a non compliance notice in terms of any national environmental management legislation?</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance1" value="yes" class="mr-2"> YES</label>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance1" value="no" class="mr-2"> NO</label>
+                                </td>
+                                <td><textarea rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Has the applicant’s licence in terms of the Waste Act 2008 ever been revoked?</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance2" value="yes" class="mr-2"> YES</label>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance2" value="no" class="mr-2"> NO</label>
+                                </td>
+                                <td><textarea rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Has the applicant ever been issued with a non compliance notice or letter in terms of any South African Law?</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance3" value="yes" class="mr-2"> YES</label>
+                                    <label class="flex items-center"><input type="radio" name="legalCompliance3" value="no" class="mr-2"> NO</label>
+                                </td>
+                                <td><textarea rows="2"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">NB: Details required above include any information that the applicant wants the Department to take into consideration in determining whether they are a “fit person” and this includes reasons why the offence happened and measures in place to prevent recurrence</p>
+
+                <div class="subsection-title">Technical competence</div>
+                <div>
+                    <label for="technicalSkillsRequired">What technical skills are required to operate the site?</label>
+                    <textarea id="technicalSkillsRequired" name="technicalSkillsRequired" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="maintainTechnicalCompetency">How will the applicant ensure and maintain technical competency in the operation of the site?</label>
+                    <textarea id="maintainTechnicalCompetency" name="maintainTechnicalCompetency" rows="3"></textarea>
+                </div>
+                <p class="mb-4 text-gray-600">Details of applicant’s experience and qualification along with that of relevant employees must be summarised as shown in the table below:</p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>POSITION</th>
+                                <th>DUTIES AND RESPONSIBILITIES</th>
+                                <th>QUALIFICATIONS AND EXPERIENCE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><textarea rows="2"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><textarea rows="2"></textarea></td>
+                                <td><textarea rows="2"></textarea>
+                                </td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">Financial Provisions</div>
+                <p class="mb-4 text-gray-600">Provide a plan of estimated expenditure for the following:</p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>ATTACHED/NOT ATTACHED</th>
+                                <th>SECTION OF THE REPORT WHERE IT IS ATTACHED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Environmental Monitoring</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="envMonitoringAttached" value="attached" class="mr-2"> ATTACHED</label>
+                                    <label class="flex items-center"><input type="radio" name="envMonitoringAttached" value="notAttached" class="mr-2"> NOT ATTACHED</label>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Provision and replacement of infrastructure</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="infrastructureAttached" value="attached" class="mr-2"> ATTACHED</label>
+                                    <label class="flex items-center"><input type="radio" name="infrastructureAttached" value="notAttached" class="mr-2"> NOT ATTACHED</label>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Restoration and aftercare</td>
+                                <td>
+                                    <label class="flex items-center"><input type="radio" name="restorationAttached" value="attached" class="mr-2"> ATTACHED</label>
+                                    <label class="flex items-center"><input type="radio" name="restorationAttached" value="notAttached" class="mr-2"> NOT ATTACHED</label>
+                                </td>
+                                <td><input type="text"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 8: LANDFILL PARAMETERS</h2>
+
+                <div class="subsection-title">The method of disposal of waste:</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="disposalMethod" value="landBuilding" class="mr-2"> Land-building</label>
+                    <label><input type="radio" name="disposalMethod" value="landFilling" class="mr-2"> Land-filling</label>
+                    <label><input type="radio" name="disposalMethod" value="both" class="mr-2"> Both</label>
+                </div>
+
+                <div class="subsection-title">The dimensions of the disposal site in metres</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>At commencement</th>
+                                <th>After rehabilitation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Height/Depth</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>Length</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>Breadth</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">The total volume available for the disposal of waste on the site:</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="radio-group">
+                        <label><input type="radio" name="volumeAvailable" value="upTo99" class="mr-2"> Up to 99</label>
+                        <label><input type="radio" name="volumeAvailable" value="100-34999" class="mr-2"> 100-34 999</label>
+                        <label><input type="radio" name="volumeAvailable" value="35000-3.5million" class="mr-2"> 35 000- 3,5 million</label>
+                        <label><input type="radio" name="volumeAvailable" value="greaterThan3.5million" class="mr-2"> >3,5 million</label>
+                    </div>
+                    <div>
+                        <label for="volumeSourceInfo">Source of information:</label>
+                        <select id="volumeSourceInfo" name="volumeSourceInfo">
+                            <option value="">Select...</option>
+                            <option value="surveyor">Determined by surveyor</option>
+                            <option value="estimated">Estimated</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="subsection-title">The total volume already used for waste disposal:</div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="wasteBodyCoveredDaily" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="wasteBodyCoveredDaily" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Will the waste body be covered daily?</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="sufficientCoverMaterial" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="sufficientCoverMaterial" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Is sufficient cover material available?</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <label class="flex items-center mr-4">
+                        <input type="radio" name="wasteCompactedDaily" value="yes" class="mr-2"> YES
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="wasteCompactedDaily" value="no" class="mr-2"> NO
+                    </label>
+                    <span class="ml-4">Will waste be compacted daily?</span>
+                </div>
+                <div>
+                    <label for="preventProblemsMeasures">If the answers (a) and/or (b) are No, what measures will be employed to prevent the problems of burning or smouldering of waste and the generation of nuisance?</label>
+                    <textarea id="preventProblemsMeasures" name="preventProblemsMeasures" rows="3"></textarea>
+                </div>
+
+                <div class="subsection-title">The Salvage method (Mark with an “X” the method to be used.)</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="salvageMethod" value="atSource" class="mr-2"> At source</label>
+                    <label><input type="radio" name="salvageMethod" value="recyclingInstallation" class="mr-2"> Recycling installation</label>
+                    <label><input type="radio" name="salvageMethod" value="formalSalvaging" class="mr-2"> Formal salvaging</label>
+                    <label><input type="radio" name="salvageMethod" value="contractor" class="mr-2"> Contractor</label>
+                    <label><input type="radio" name="salvageMethod" value="noSalvaging" class="mr-2"> No salvaging planned</label>
+                </div>
+
+                <div class="subsection-title">Fatal Flaws for the site:</div>
+                <p class="mb-4 text-gray-600">Indicate which of the following apply to the facility for a waste management activity:</p>
+                <div class="grid grid-cols-1 gap-2">
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw1" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw1" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within a 3000m radius of the end of an airport landing strip</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw2" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw2" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within the 1 in 50 year flood line of any watercourse</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw3" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw3" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within an unstable area(fault zone, seismic zone, dolomitic area, sinkholes)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw4" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw4" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within the drainage area or within 5 km of water source</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw5" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw5" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within an area with shallow and/or visible water table</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw6" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw6" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within an area adjacent to or above an aquifer</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw7" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw7" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within an area with shallow bedrock and limited available cover material</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw8" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw8" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within 100 m of the source of surface water</span>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="flex items-center mr-4"><input type="radio" name="fatalFlaw9" value="yes" class="mr-2"> YES</label>
+                        <label class="flex items-center"><input type="radio" name="fatalFlaw9" value="no" class="mr-2"> NO</label>
+                        <span class="ml-4">Within 1km from the wetland</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label for="distanceResidential">Indicate the distance to the boundary of the nearest residential area (metres):</label>
+                        <input type="number" id="distanceResidential" name="distanceResidential" step="1">
+                    </div>
+                    <div>
+                        <label for="distanceIndustrial">Indicate the distance to the boundary of the industrial area (metres):</label>
+                        <input type="number" id="distanceIndustrial" name="distanceIndustrial" step="1">
+                    </div>
+                </div>
+
+                <div class="subsection-title">Wettest six months of the year</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="wettestMonths" value="novApr" class="mr-2"> November- April</label>
+                    <label><input type="radio" name="wettestMonths" value="mayOct" class="mr-2"> May -October</label>
+                </div>
+
+                <div class="subsection-title">For the wettest six month period indicated above, indicate the following for the preceding 30 years</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Total rainfall for 6 months</th>
+                                <th>Total A-pan evaporation for 6 months</th>
+                                <th>Climatic water balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>For the 1st wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 2nd wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 3rd wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 4th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 5th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 6th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 7th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 8th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 9th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                            <tr>
+                                <td>For the 10th wettest year</td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                                <td><input type="number" step="0.01"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection-title">Location and depth of ground water monitoring boreholes:</div>
+                <p class="mb-4 text-gray-600">Enter up to 11 boreholes.</p>
+                <div id="borehole-container">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-2 borehole-row">
+                        <label>Codes of boreholes:</label>
+                        <input type="text">
+                        <label>Borehole locality:</label>
+                        <input type="text">
+                        <label>Depth (m):</label>
+                        <input type="number" step="0.01">
+                        <label>Latitude:</label>
+                        <input type="text" placeholder="° ' ">
+                        <label>Longitude:</label>
+                        <input type="text" placeholder="° ' ">
+                    </div>
+                </div>
+                <button type="button" class="btn-primary text-sm px-4 py-2 mt-2" onclick="addBoreholeRow()">Add More Boreholes</button>
+            </div>
+
+            <div class="form-section">
+                <h2 class="form-section-title">SECTION 9: DECLARATIONS</h2>
+
+                <div class="subsection-title">The independent Environmental Assessment Practitioner</div>
+                <div class="signature-area">
+                    <label for="eapDeclarationName">I, </label>
+                    <input type="text" id="eapDeclarationName" name="eapDeclarationName" class="inline-block w-auto">
+                    <span class="ml-2">, declare under oath that I –</span>
+                    <ul class="list-disc list-inside mt-2 text-gray-700">
+                        <li>act as the independent environmental assessment practitioner in this application ;</li>
+                        <li>do not have and will not have any financial interest in the undertaking of the activity, other than remuneration for work performed in terms of the Environmental Impact Assessment Regulations, 2006;</li>
+                        <li>have and will not have no vested interest in the proposed activity proceeding;</li>
+                        <li>have no, and will not engage in, conflicting interests in the undertaking of the activity;</li>
+                        <li>undertake to disclose, to the competent authority, any material information that have or may have the potential to influence the decision of the competent authority or the objectivity of any report, plan or document required in terms of the Environmental Impact Assessment Regulations, 2006;</li>
+                        <li>will ensure that information containing all relevant facts in respect of the application is distributed or made available to interested and affected parties and the public and that participation by interested and affected parties is facilitated in such a manner that all interested and affected parties will be provided with a reasonable opportunity to participate and to provide comments on documents that are produced to support the application;</li>
+                        <li>will ensure that the comments of all interested and affected parties are considered and recorded in reports that are submitted to the competent authority in respect of the application, provided that comments that are made by interested and affected parties in respect of a final report that will be submitted to the competent authority may be attached to the report without further amendment to the report;</li>
+                        <li>will keep a register of all interested and affected parties that participated in a public participation process; and</li>
+                        <li>will provide the competent authority with access to all information at my disposal regarding the application, whether such information is favourable to the applicant or not.</li>
+                    </ul>
+                    <div class="mt-4">
+                        <label for="eapSignature">Signature of the Environmental Assessment Practitioner:</label>
+                        <input type="text" id="eapSignature" name="eapSignature">
+                    </div>
+                    <div>
+                        <label for="eapCompanyName">Name of company:</label>
+                        <input type="text" id="eapCompanyName" name="eapCompanyName">
+                    </div>
+                    <div>
+                        <label for="eapDate">Date:</label>
+                        <input type="date" id="eapDate" name="eapDate">
+                    </div>
+                    <div class="mt-4">
+                        <label for="commissionerSignature">Signature of the Commissioner of Oaths:</label>
+                        <input type="text" id="commissionerSignature" name="commissionerSignature">
+                    </div>
+                    <div>
+                        <label for="commissionerDate">Date:</label>
+                        <input type="date" id="commissionerDate" name="commissionerDate">
+                    </div>
+                    <div>
+                        <label for="commissionerDesignation">Designation:</label>
+                        <input type="text" id="commissionerDesignation" name="commissionerDesignation">
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Official stamp (Above)</p>
+                </div>
+
+                <div class="subsection-title">The Applicant</div>
+                <div class="signature-area">
+                    <label for="applicantDeclarationName">I, </label>
+                    <input type="text" id="applicantDeclarationName" name="applicantDeclarationName" class="inline-block w-auto">
+                    <span class="ml-2">declare under oath that I -</span>
+                    <ul class="list-disc list-inside mt-2 text-gray-700">
+                        <li>Am, or represent, the applicant in this application;</li>
+                        <li>appointed the environmental assessment practitioner as indicated above to act as the independent environmental assessment practitioner for this application;</li>
+                        <li>will provide the environmental assessment practitioner and the competent authority with access to all information at my disposal that is relevant to the application;</li>
+                        <li>will be responsible for the costs incurred in complying with the Environmental Impact Assessment Regulations, 2006, including but not limited to –
+                            <ul class="list-circle list-inside ml-4">
+                                <li>costs incurred in connection with the appointment of the environmental assessment practitioner or any person contracted by the environmental assessment practitioner;</li>
+                                <li>costs incurred in respect of the undertaking of any process required in terms of the regulations;</li>
+                                <li>costs in respect of any fee prescribed by the Minister in respect of the regulations;</li>
+                                <li>costs in respect of specialist reviews, if the competent authority decides to recover costs; and</li>
+                                <li>the provision of security to ensure compliance with conditions attached to an environmental authorisation, should it be required by the competent authority;</li>
+                            </ul>
+                        </li>
+                        <li>will ensure that the environmental assessment practitioner is competent to comply with the requirements of these regulations;</li>
+                        <li>am responsible for complying with the conditions of any environmental authorisation issued by the competent authority;</li>
+                        <li>hereby indemnify, the government of the Republic, the competent authority and all its officers, agents and employees, from any liability arising out of the content of any report, any procedure or any action for which the applicant or environmental assessment practitioner is responsible in terms of these regulations; and</li>
+                        <li>will not hold the competent authority responsible for any costs that may be incurred by the applicant in proceeding with an activity prior to an appeal being decided in terms of these regulations.</li>
+                    </ul>
+                    <div class="mt-4">
+                        <label for="applicantSignature">Signature of Applicant:</label>
+                        <input type="text" id="applicantSignature" name="applicantSignature">
+                    </div>
+                    <div>
+                        <label for="applicantCompanyName">Name of company:</label>
+                        <input type="text" id="applicantCompanyName" name="applicantCompanyName">
+                    </div>
+                    <div>
+                        <label for="applicantDate">Date:</label>
+                        <input type="date" id="applicantDate" name="applicantDate">
+                    </div>
+                    <div class="mt-4">
+                        <label for="applicantCommissionerSignature">Signature of the Commissioner of Oaths:</label>
+                        <input type="text" id="applicantCommissionerSignature" name="applicantCommissionerSignature">
+                    </div>
+                    <div>
+                        <label for="applicantCommissionerDate">Date:</label>
+                        <input type="date" id="applicantCommissionerDate" name="applicantCommissionerDate">
+                    </div>
+                    <div>
+                        <label for="applicantCommissionerDesignation">Designation:</label>
+                        <input type="text" id="applicantCommissionerDesignation" name="applicantCommissionerDesignation">
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Official stamp (Above)</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 mb-12">
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to add more coordinate rows
+        function addCoordinateRow() {
+            const container = document.getElementById('coordinates-container');
+            const currentRowCount = container.getElementsByClassName('coordinate-row').length;
+            if (currentRowCount < 11) { // Limit to 11 rows as per document
+                const newRow = document.createElement('div');
+                newRow.className = 'grid grid-cols-1 md:grid-cols-4 gap-4 mb-2 coordinate-row';
+                newRow.innerHTML = `
+                    <label>Number of corner:</label>
+                    <input type="text" placeholder="e.g., ${currentRowCount + 1}">
+                    <label>Latitude:</label>
+                    <input type="text" placeholder="° ' ">
+                    <label>Longitude:</label>
+                    <input type="text" placeholder="° ' ">
+                `;
+                container.appendChild(newRow);
+            } else {
+                alert('Maximum of 11 coordinate rows reached.');
+            }
+        }
+
+        // Function to add more borehole rows
+        function addBoreholeRow() {
+            const container = document.getElementById('borehole-container');
+            const currentRowCount = container.getElementsByClassName('borehole-row').length;
+            if (currentRowCount < 11) { // Limit to 11 rows as per document
+                const newRow = document.createElement('div');
+                newRow.className = 'grid grid-cols-1 md:grid-cols-5 gap-4 mb-2 borehole-row';
+                newRow.innerHTML = `
+                    <label>Codes of boreholes:</label>
+                    <input type="text">
+                    <label>Borehole locality:</label>
+                    <input type="text">
+                    <label>Depth (m):</label>
+                    <input type="number" step="0.01">
+                    <label>Latitude:</label>
+                    <input type="text" placeholder="° ' ">
+                    <label>Longitude:</label>
+                    <input type="text" placeholder="° ' ">
+                `;
+                container.appendChild(newRow);
+            } else {
+                alert('Maximum of 11 borehole rows reached.');
+            }
+        }
+    </script>
+</body>
+</html>
